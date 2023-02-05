@@ -1,12 +1,11 @@
 
-import { useState } from 'react'
 import './App.scss'
-import Tabs from './component/tabs'
+import Tabs from './component/tabs/tabs'
 function App() {
 
   return (
     <div className="App">
-      <Tabs ></Tabs>
+      <Tabs defaultIndex='tab0' mode="horizontal" ></Tabs>
     </div>
   )
 }
