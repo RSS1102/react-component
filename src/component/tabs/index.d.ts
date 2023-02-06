@@ -1,18 +1,32 @@
+
+/**
+ * @description tabs数组
+ */
+export type tabsItems = {
+    children: string | number | ReactNode,
+    label: string,
+    key: string
+}[]
 /**
  * @description 外部参数
+ * @param mode tabs模式
  * @param defaultIndex 默认选取
+ * @param tabs数组
  */
 export type TabsPropsType = {
-    mode?: "vertical" | "horizontal"
-    defaultIndex: string
+    mode?: "vertical" | "horizontal",
+    defaultIndex: string,
+    items: tabsItems
 }
 /**
  * @description 整个tabs组件参数
  */
-export interface TabListType extends TabsPropsType {
+export interface TabListType {
     selectedIndex: string,
     setSelectedIndex: React.Dispatch<React.SetStateAction<string>>,
-    children: string | number | ReactNode,
+    mode?: "vertical" | "horizontal",
+    defaultIndex: string,
+    children: string | number | ReactNode
 }
 
 /**
