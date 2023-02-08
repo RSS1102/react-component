@@ -1,13 +1,13 @@
 
 import './App.scss'
-import { TabsPropsType } from './component/tabs'
-import Tabs from './component/tabs/tabs'
+import "rsstest/dist/style.css"
+
 function App() {
-  const items: TabsPropsType["items"] = [
+  const items = [
     {
       key: "1",
       label: "1",
-      children: "1",
+      children: <div>123</div>,
     },
     {
       key: "2",
@@ -17,7 +17,7 @@ function App() {
   ]
   return (
     <div className="App">
-      <Tabs items={items} defaultIndex='tab0' mode="horizontal" ></Tabs>
+      {/* <Tabs items={items} default={"1"} ></Tabs> */}
     </div>
   )
 }
