@@ -19,11 +19,7 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "lib",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["libs/*"]
-    }
   },
-  "include": ["src", "libs"],
+  "include": ["playground", "libs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

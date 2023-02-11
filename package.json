@@ -42,7 +42,6 @@
     "react": ">=18.0.0"
   },
   "dependencies": {
-    "@rss1102/react-component": "^0.0.1",
     "react": ">=18.0.0",
     "react-dom": "^18.2.0",
     "sass": "^1.58.0"

@@ -1,3 +1,3 @@
-import Tabs from 'libs/tabs/tabs';
+import RsTabs from 'libs/tabs/tabs';
 
-export declare const Tabs: typeof Tabs;
+export declare const RsTabs: typeof RsTabs;

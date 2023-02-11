@@ -25,7 +25,6 @@ export interface TabListType {
   selectedIndex: string;
   setSelectedIndex: React.Dispatch<React.SetStateAction<string>>;
   mode?: 'vertical' | 'horizontal';
-  defaultIndex: string;
   children: string | number | ReactNode;
 }
 

@@ -1,7 +1,5 @@
 import './App.scss';
-import '@rss1102/react-component/dist/style.css';
-import { Tabs } from '@rss1102/react-component';
-
+import RsTabs from '../libs/RsTabs/RsTabs';
 function App() {
   const items = [
     {
@@ -17,9 +15,8 @@ function App() {
   ];
   return (
     <div className="App">
-      <Tabs items={items} default="1" />
+      <RsTabs items={items} defaultIndex="1" />
     </div>
   );
 }
-
 export default App;

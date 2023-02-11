@@ -1,10 +1,11 @@
 import { cloneElement, createContext, Children, useContext, useMemo, useState } from 'react';
+import { TabsPropsType, TabListType, TabBarItemType, TabPanelItemType, TabBarsType, TabPanelsType } from './index';
+import './RsTabs.scss';
+
 const tabsContent = createContext({
   selectedIndex: '',
   setSelectedIndex: (index: string) => {},
 });
-import { TabsPropsType, TabListType, TabBarItemType, TabPanelItemType, TabBarsType, TabPanelsType } from './index';
-import './tabs.scss';
 
 /**
  * @description 生成样式 : 选中|隐藏
@@ -37,7 +38,6 @@ const TabBars = ({ children }: TabBarsType) => {
   return (
     <div className="tab-bars">
       {Children.map(children, (child) => {
-        console.log(child.props.id);
         return cloneElement(child, {
           onClick: () => context.setSelectedIndex(child.props.id),
           isSelected: child.props.id === context.selectedIndex,
@@ -66,7 +66,6 @@ const TabPanels = ({ children }: TabPanelsType) => {
   return (
     <div className="tab-panels">
       {Children.map(children, (child) => {
-        console.log(child.props.id);
         return cloneElement(child, {
           isSelected: child.props.id === context.selectedIndex,
         });
@@ -78,13 +77,13 @@ const TabPanels = ({ children }: TabPanelsType) => {
 /**
  * @returns  返回整个tabs组件
  */
-const TabList = ({ children, selectedIndex, setSelectedIndex, defaultIndex }: TabListType) => {
+const TabList = ({ children, selectedIndex, setSelectedIndex }: TabListType) => {
   const context = useMemo(() => ({ selectedIndex, setSelectedIndex }), [selectedIndex, setSelectedIndex]);
   return <tabsContent.Provider value={context}>{children}</tabsContent.Provider>;
 };
 
-const Tabs = (props: TabsPropsType) => {
-  const [selectedIndex, setSelectedIndex] = useState('tab0');
+const RsTabs = (props: TabsPropsType) => {
+  const [selectedIndex, setSelectedIndex] = useState(props.defaultIndex);
   const tabMode = props.mode
     ? props.mode === 'horizontal'
       ? 'tabs-horizontal'
@@ -95,7 +94,7 @@ const Tabs = (props: TabsPropsType) => {
 
   return (
     <div className={tabMode}>
-      <TabList selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} defaultIndex={props.defaultIndex}>
+      <TabList selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}>
         <TabBars>
           {props.items.map((item) => (
             <TabBarsItem key={item.key ?? item.label} id={item.key ?? item.label}>
@@ -115,4 +114,4 @@ const Tabs = (props: TabsPropsType) => {
   );
 };
 
-export default Tabs;
+export default RsTabs;

@@ -8,12 +8,6 @@ export default defineConfig(({ command, mode }) => {
   return {
     plugins: [react()],
     base: env.VITE_BASEURL,
-    // 配置路径 https://www.cnblogs.com/chen-cheng/p/16184652.html
-    resolve: {
-      alias: {
-        '@': path.join(__dirname, 'libs'),
-      },
-    },
     build: {
       lib: {
         entry: resolve(__dirname, 'libs/index.tsx'),
