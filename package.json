@@ -3,7 +3,7 @@
   "description": "个人的react组件库",
   "author": "RSS1102 <jimmyrss1102@gmail.com>",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "main": "./dist/react-components.js",
   "module": "./dist/react-components.umd.cjs",
   "types": "libs/types/index.d.ts",
