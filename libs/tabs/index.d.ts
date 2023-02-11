@@ -1,4 +1,4 @@
-import { React, ReactNode, ReactElement } from "react";
+import { React, ReactNode, ReactElement } from 'react';
 /**
  * @description tabs数组
  */
@@ -14,7 +14,7 @@ export type tabsItems = {
  * @param tabs数组
  */
 export interface TabsPropsType {
-  mode?: "vertical" | "horizontal";
+  mode?: 'vertical' | 'horizontal';
   defaultIndex: string;
   items: tabsItems;
 }
@@ -24,7 +24,7 @@ export interface TabsPropsType {
 export interface TabListType {
   selectedIndex: string;
   setSelectedIndex: React.Dispatch<React.SetStateAction<string>>;
-  mode?: "vertical" | "horizontal";
+  mode?: 'vertical' | 'horizontal';
   defaultIndex: string;
   children: string | number | ReactNode;
 }

@@ -1,57 +1,27 @@
-import {
-  cloneElement,
-  createContext,
-  Children,
-  useContext,
-  useMemo,
-  useState,
-} from "react";
+import { cloneElement, createContext, Children, useContext, useMemo, useState } from 'react';
 const tabsContent = createContext({
-  selectedIndex: "",
+  selectedIndex: '',
   setSelectedIndex: (index: string) => {},
 });
-import {
-  TabsPropsType,
-  TabListType,
-  TabBarItemType,
-  TabPanelItemType,
-  TabBarsType,
-  TabPanelsType,
-} from "./index";
-import "./tabs.scss";
+import { TabsPropsType, TabListType, TabBarItemType, TabPanelItemType, TabBarsType, TabPanelsType } from './index';
+import './tabs.scss';
 
 /**
  * @description 生成样式 : 选中|隐藏
  * @returns [className]+'hided'| [className]+'selected'
  */
-const isSelectedTabBarItemClassName = (
-  className: string,
-  isSelected?: boolean,
-  isHide?: boolean
-) => {
+const isSelectedTabBarItemClassName = (className: string, isSelected?: boolean, isHide?: boolean) => {
   if (isHide) {
-    return "hided";
+    return 'hided';
   }
-  return (
-    isSelected ? [className].concat("tab-bars-item-selected") : [className]
-  ).join(" ");
+  return (isSelected ? [className].concat('tab-bars-item-selected') : [className]).join(' ');
 };
 
 /**
  * @returns TabBarItem 导航子组件
  */
-const TabBarsItem = ({
-  children,
-  onClick,
-  isSelected,
-  isHide,
-  id,
-}: TabBarItemType) => {
-  const className = isSelectedTabBarItemClassName(
-    "tab-bars-item",
-    isSelected,
-    isHide
-  );
+const TabBarsItem = ({ children, onClick, isSelected, isHide, id }: TabBarItemType) => {
+  const className = isSelectedTabBarItemClassName('tab-bars-item', isSelected, isHide);
   return (
     <div className={className} onClick={onClick} id={id}>
       {children}
@@ -82,10 +52,8 @@ const TabBars = ({ children }: TabBarsType) => {
  */
 const TabPanelItem = ({ children, isSelected }: TabPanelItemType) => {
   const isSelectedTabPanelItemClassName = (
-    isSelected
-      ? ["tab-panel-item"].concat("tab-panel-item-show")
-      : ["tab-panel-item"].concat("tab-panel-item-hide")
-  ).join(" ");
+    isSelected ? ['tab-panel-item'].concat('tab-panel-item-show') : ['tab-panel-item'].concat('tab-panel-item-hide')
+  ).join(' ');
   return <div className={isSelectedTabPanelItemClassName}>{children}</div>;
 };
 
@@ -110,54 +78,34 @@ const TabPanels = ({ children }: TabPanelsType) => {
 /**
  * @returns  返回整个tabs组件
  */
-const TabList = ({
-  children,
-  selectedIndex,
-  setSelectedIndex,
-  defaultIndex,
-}: TabListType) => {
-  const context = useMemo(
-    () => ({ selectedIndex, setSelectedIndex }),
-    [selectedIndex, setSelectedIndex]
-  );
-  return (
-    <tabsContent.Provider value={context}>{children}</tabsContent.Provider>
-  );
+const TabList = ({ children, selectedIndex, setSelectedIndex, defaultIndex }: TabListType) => {
+  const context = useMemo(() => ({ selectedIndex, setSelectedIndex }), [selectedIndex, setSelectedIndex]);
+  return <tabsContent.Provider value={context}>{children}</tabsContent.Provider>;
 };
 
 const Tabs = (props: TabsPropsType) => {
-  const [selectedIndex, setSelectedIndex] = useState("tab0");
+  const [selectedIndex, setSelectedIndex] = useState('tab0');
   const tabMode = props.mode
-    ? props.mode === "horizontal"
-      ? "tabs-horizontal"
-      : props.mode === "vertical"
-      ? "tabs-vertical"
-      : "tabs-horizontal"
-    : "tabs-horizontal";
+    ? props.mode === 'horizontal'
+      ? 'tabs-horizontal'
+      : props.mode === 'vertical'
+      ? 'tabs-vertical'
+      : 'tabs-horizontal'
+    : 'tabs-horizontal';
 
   return (
     <div className={tabMode}>
-      <TabList
-        selectedIndex={selectedIndex}
-        setSelectedIndex={setSelectedIndex}
-        defaultIndex={props.defaultIndex}
-      >
+      <TabList selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} defaultIndex={props.defaultIndex}>
         <TabBars>
           {props.items.map((item) => (
-            <TabBarsItem
-              key={item.key ?? item.label}
-              id={item.key ?? item.label}
-            >
+            <TabBarsItem key={item.key ?? item.label} id={item.key ?? item.label}>
               {item.label}
             </TabBarsItem>
           ))}
         </TabBars>
         <TabPanels>
           {props.items.map((item) => (
-            <TabPanelItem
-              key={item.key ?? item.label}
-              id={item.key ?? item.label}
-            >
+            <TabPanelItem key={item.key ?? item.label} id={item.key ?? item.label}>
               {item.children}
             </TabPanelItem>
           ))}

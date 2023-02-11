@@ -4,13 +4,7 @@
  *  eslint-config-alloy:https://alloyteam.github.io/eslint-config-alloy/?hideOff=1&rule=react
  */
 module.exports = {
-  extends: [
-    "alloy",
-    "alloy/react",
-    "alloy/typescript",
-    "prettier",
-    "eslint-config-prettier",
-  ],
+  extends: ['alloy', 'alloy/react', 'alloy/typescript', 'prettier', 'eslint-config-prettier'],
   env: {
     // Your environments (which contains several predefined global variables)
     //
@@ -26,9 +20,9 @@ module.exports = {
     //
     // myGlobal: false
   },
-  plugins: ["eslint-plugin-prettier"],
+  plugins: ['eslint-plugin-prettier'],
   rules: {
     // Customize your rules
-    "prettier/prettier": 2,
+    'prettier/prettier': [2],
   },
 };

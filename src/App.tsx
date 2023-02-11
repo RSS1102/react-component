@@ -1,17 +1,17 @@
-import "./App.scss";
-import "@rss1102/react-component/dist/style.css";
-import { Tabs } from "@rss1102/react-component";
+import './App.scss';
+import '@rss1102/react-component/dist/style.css';
+import { Tabs } from '@rss1102/react-component';
 
 function App() {
   const items = [
     {
-      key: "1",
-      label: "1",
+      key: '1',
+      label: '1',
       children: <div>1111</div>,
     },
     {
-      key: "2",
-      label: "2",
+      key: '2',
+      label: '2',
       children: <div>2222</div>,
     },
   ];
