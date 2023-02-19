@@ -1,5 +1,5 @@
 import './App.scss';
-import RsTabs from '../libs/RsTabs/RsTabs';
+import RsTabs from '../libs/RsTabs/index';
 function App() {
   const items = [
     {

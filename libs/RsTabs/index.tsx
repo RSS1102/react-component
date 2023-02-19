@@ -1,6 +1,13 @@
 import { cloneElement, createContext, Children, useContext, useMemo, useState } from 'react';
-import { TabsPropsType, TabListType, TabBarItemType, TabPanelItemType, TabBarsType, TabPanelsType } from './index';
-import './RsTabs.scss';
+import {
+  TabsPropsType,
+  TabListType,
+  TabBarItemType,
+  TabPanelItemType,
+  TabBarsType,
+  TabPanelsType,
+} from '../types/model/RsTabs';
+import './index.scss';
 
 const tabsContent = createContext({
   selectedIndex: '',

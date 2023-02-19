@@ -20,6 +20,6 @@
     "sourceMap": true,
     "outDir": "lib",
   },
-  "include": ["playground", "libs"],
+  "include": ["playground/**/*", "libs/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

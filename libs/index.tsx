@@ -1,1 +1,1 @@
-export { default as RsTabs } from './RsTabs/RsTabs';
+export { default as RsTabs } from './RsTabs/index';

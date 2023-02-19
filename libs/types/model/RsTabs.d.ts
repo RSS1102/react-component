@@ -1,4 +1,4 @@
-import { React, ReactNode, ReactElement } from 'react';
+import React, { ReactNode, ReactElement } from 'react';
 /**
  * @description tabs数组
  */
@@ -35,7 +35,7 @@ export interface TabListType {
  * @param isSelected 是否被选中
  * @param isHide 是否被隐藏
  */
-interface TabBarItemType {
+export interface TabBarItemType {
   children: string | number | ReactNode;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   isSelected?: boolean;
@@ -47,7 +47,7 @@ interface TabBarItemType {
  * @description 导航
  * @param children 导航子内容[]
  */
-interface TabBarsType {
+export interface TabBarsType {
   children: ReactElement<TabBarItemType>[];
 }
 

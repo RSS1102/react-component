@@ -1,3 +1,3 @@
-import RsTabs from 'libs/tabs/tabs';
+import RsTabs from 'libs/RsTabs/index';
 
 export declare const RsTabs: typeof RsTabs;
