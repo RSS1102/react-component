@@ -6,7 +6,7 @@ import {
   TabPanelItemType,
   TabBarsType,
   TabPanelsType,
-} from '../types/model/RsTabs';
+} from '../../types/model/RsTabs';
 import './index.scss';
 
 const tabsContent = createContext({
