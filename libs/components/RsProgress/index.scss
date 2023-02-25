@@ -1,0 +1,9 @@
+.rs-progress{
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  .rs-progress-rate{
+     height: 6px;
+     border-radius: 3px;
+  }
+}
