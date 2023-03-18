@@ -1,9 +1,12 @@
-import Tabs from './components/RsTabs/Tabs';
-
+import Input from './components/RsInput/index';
+import Modal from './components/RsModal/index';
+import Progress from './components/RsProgress/index';
 function App() {
   return (
     <div className="App">
-      <Tabs />
+      <Modal />
+      <Input />
+      <Progress />
     </div>
   );
 }
