@@ -1,0 +1,30 @@
+.rs-input-wrapper {
+  display: inline-flex;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+
+  input {
+    margin: 2px;
+    outline: none;
+    border: none;
+  }
+  &:focus-within {
+    border: 1px solid blue;
+  }
+
+  .rs-input-icon {
+    text-align: center;
+    font-size: 14px;
+    width: 26px;
+    overflow: hidden;
+  }
+
+  .rs-input-icon-start {
+    margin-left: 3px;
+  }
+
+  .rs-input-icon-end {
+    margin-right: 3px;
+  }
+
+}
